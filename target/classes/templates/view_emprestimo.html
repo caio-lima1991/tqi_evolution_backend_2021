@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.IsEmpty(viewModel)}">
+        <h2>Lista de Contratos</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>codigoEmprestimo</th>
+                <th>totalEmprestimo</th>
+                <th>quantParcelas</th>
+                <th>primeiraParcela</th>
+                <th>email</th>
+                <th>renda</th>
+            </tr>
+            <tr th:each="viewModel : ${viewModel}">
+                <td th:text="$viewModel.codigoEmprestimo"></td>
+                <td th:text="$viewModel.totalEmprestimo"></td>
+                <td th:text="$viewModel.quantParcelas"></td>
+                <td th:text="$viewModel.primeiraParcela"></td>
+                <td th:text="$viewModel.email"></td>
+                <td th:text="$viewModel.renda"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
